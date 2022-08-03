@@ -1,4 +1,10 @@
 var startBtn = document.querySelector("#start-quiz")
+var startContent = document.querySelector(".start-content");
+var quizContent = document.querySelector("#quiz-content");
+var resultContent = document.querySelector("#result-content");
+var answerChoices = document.querySelector("#answer-choices");
+var time = document.querySelector("#time");
+var timeSec = document.querySelector("#time-sec");
 var questions = [ 
     {
     question: "Commonly used data types DO NOT include:",

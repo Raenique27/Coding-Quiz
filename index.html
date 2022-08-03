@@ -11,9 +11,9 @@
     <!-- Header -->
     <header>
         <a class="highscores" href="/highscores.html">View high scores</a>
-        <div class="timer">
-            <div class="time">Time</div>
-            <div class="time-sec">0</div>
+        <div id="quiz-content" class="timer">
+            <div id="time">Time</div>
+            <div id="time-sec">0</div>
         </div>
     </header>
     <!-- Quiz Content -->
@@ -23,8 +23,8 @@
             <button id="start-quiz" class="btn">Start Quiz</button>
         </div>
 
-        <section class="page-content">
-            <div class="page-heading">
+        <section class="start-content">
+            <div class="start-heading">
                 <h1>Coding Quiz Challenge</h1>
             </div>
             <div class="start-p">
@@ -36,11 +36,11 @@
         </section>
         
         <!-- Quiz Section -->
-       <section>
-        <div id="question">
+       <section id="quiz-content">
+        <div class="question">
             <!-- questions to quiz are located in js file -->
         </div>
-        <div id="list-options">
+        <div id="answer-choices">
             <!-- answer choices in js file -->
         </div>
        </section>
@@ -52,7 +52,7 @@
        </footer>
 
        <!-- Results -->
-       <section class="results-content">
+       <section id="results-content">
 
         <div class="complete-quiz">All Done!</div>
         <div class="quiz-score"></div>

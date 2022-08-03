@@ -29,13 +29,15 @@ header {
 }
 
 /* start page styling */
-.page-content {
+.start-content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 530px;
+    border-radius: 5px;
 }
 
-.page-heading {
+.start-heading {
     position: absolute;
     top: 105px;
     left: 35%;
@@ -69,10 +71,6 @@ header {
 
 .start-btn button:hover {
     background-color: plum;
-}
-.page-content {
-    width: 530px;
-    border-radius: 5px;
 }
 /* Question Styling */
 .option{
