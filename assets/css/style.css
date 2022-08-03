@@ -3,6 +3,31 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+}
+.highscores {
+    color: plum;
+    text-decoration: none;
+}
+
+.timer{
+    display: flex;
+}
+
+.time {
+    position: relative;
+    right: 20px;
+}
+
+.time-sec {
+    position: relative;
+    right: 10px;
+}
+
 /* start page styling */
 .page-content {
     display: flex;
@@ -49,3 +74,28 @@
     width: 530px;
     border-radius: 5px;
 }
+/* Question Styling */
+.option{
+    display: flex;
+    width: 19%;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 5px solid white;
+    background-color: indigo;
+    color: white;
+    
+}
+
+.option:hover {
+    cursor: pointer;
+    background-color: plum;
+}
+
+.option-number {
+    padding: 5px;
+}
+
+.option-text {
+    padding: 5px;
+}
+
