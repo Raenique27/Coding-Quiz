@@ -40,27 +40,48 @@
 .quiz-content {
     display: flex;
     flex-direction: column;
-    text-align: center;
+    align-items: center;
     padding: 50px;
+    margin: 20px;
 }
 
-.answer-choices{
-    padding: 50px;
-    list-style: none;
+#question-title{
+    margin: 20px;
+    font-size: 40px;
 }
-.answer-choices button{
+
+.answer-choices {
+    display: flex;
+    justify-content: space-evenly;
     width: 25%;
     font-size: 20px;
     border-radius: 10px;
     border: 5px solid white;
     background-color: indigo;
     color: white;
+    list-style: none;
+    padding: 5px;
     
 }
 
-.answer-choices button:hover {
+.answer-choices:hover {
     cursor: pointer;
     background-color: plum;
+}
+
+.correct-wrong {
+    width: 100%;
+    font-size: 30px;
+    color: lightgray;
+    display: none;
+}
+
+.correct-wrong p {
+    border: 3px solid lightgray;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    margin: 20px;
 }
 
 .results-content {
