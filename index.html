@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,70 +8,34 @@
     <title>Coding Quiz Challenge</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
     <!-- Header -->
     <header>
-        <a class="highscores" href="/highscores.html">View high scores</a>
-        <div id="quiz-content" class="timer">
-            <div id="time">Time</div>
-            <div id="time-sec">0</div>
+        <div id="highscore-timer" class="highscore-timer">  
+            <a class="highscores" href="./highscores.html">View high scores</a>
+            <p>Time: 0</p>
         </div>
     </header>
     <!-- Quiz Content -->
-    <main id="start-page" class="start-page">
+    <section id="start-page" class="start-page">
         <!-- Start Page -->
-        <div class="start-btn">
-            <button id="start-quiz" class="btn">Start Quiz</button>
+
+        <div id="start-content" class="start-content">
+
+            <h1>Coding Quiz Challenge</h1>
+
+            <p>Try to answer the following code related questions within the time limit. </br>
+                Keep in mind that incorrect answers will penalize you score/time by </br>
+                10 seconds !
+            </p>
+
+            <a href="./cquiz.html"><button id="start-quiz" class="start-btn">Start Quiz</button></a>
         </div>
 
-        <section class="start-content">
-            <div class="start-heading">
-                <h1>Coding Quiz Challenge</h1>
-            </div>
-            <div class="start-p">
-                <p>Try to answer the following code related questions within the time limit. </br>
-                    Keep in mind that incorrect answers will penalize you score/time by </br>
-                    10 seconds !
-                </p>
-            </div>
-        </section>
-        
-        <!-- Quiz Section -->
-       <section id="quiz-content">
-        <div class="question">
-            <!-- questions to quiz are located in js file -->
-        </div>
-        <div id="answer-choices">
-            <!-- answer choices in js file -->
-        </div>
-       </section>
+    </section>
 
-       <footer>
-        <div class="correct-wrong">
-            <!-- answer wrong or correct in js file -->
-        </div>
-       </footer>
 
-       <!-- Results -->
-       <section id="results-content">
-
-        <div class="complete-quiz">All Done!</div>
-        <div class="quiz-score"></div>
-
-        <form id="highscore-form">
-            <div class="form-group">
-                <label for="initials">Enter Initials:</label><br>
-                <input type="text" id="initials" name="initials">
-            </div>
-            <div class="form-group">
-                <button id="sub-btn" class="btn" type="submit">submit</button>
-            </div>
-        </form>
-
-       </section>
-
-    </main>
-
-    <script src="./assets/js/script.js"></script>
 </body>
+
 </html>

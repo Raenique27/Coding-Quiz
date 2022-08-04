@@ -1,10 +1,17 @@
-var startBtn = document.querySelector("#start-quiz")
-var startContent = document.querySelector(".start-content");
-var quizContent = document.querySelector("#quiz-content");
-var resultContent = document.querySelector("#result-content");
-var answerChoices = document.querySelector("#answer-choices");
-var time = document.querySelector("#time");
-var timeSec = document.querySelector("#time-sec");
+var quizQuestion = document.querySelector("#quiz-content");
+var highscoreTimer = document.querySelector("#highscore-timer");
+var timer = highscoreTimer.querySelector("p");
+var answerChoices = quizQuestion.querySelector("ul");
+var results = document.querySelector("#results-content");
+var pageContent = document.querySelector("main");
+var highscoreContainer = document.querySelector("#highscore-container");
+var correctWrong = document.querySelector("#correct-wrong");
+var initialsInput = highscoreContainer.querySelector("input");
+var submitbtn = highscoreContainer.querySelector("button");
+var highscorePage = document.querySelector("#highscore-page");
+
+
+
 var questions = [ 
     {
     question: "Commonly used data types DO NOT include:",
@@ -33,10 +40,9 @@ var questions = [
     answer: "4. console.log",
     options: ["1. Javascript", "2. terminal/bash", "3. for loops", "4. console.log"]
 },
-]
-   
+];
 
 
-startBtn.addEventListener("click",function(){
-    console.log("clicked");
-})
+
+
+

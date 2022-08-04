@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Quiz Challenge</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <div id="highscore-timer" class="highscore-timer">
+            <a class="highscores" href="./highscores.html">View high scores</a>
+            <p>Time: 75</p>
+        </div>
+    </header>
+    <!-- Quiz questions generated in Javascript -->
+    <main>
+        <section id="quiz-content" class="quiz-content">
+            <h2 class="question-title">Question Here</h2>
+            <ul id="answer-choices" class="answer-choices">
+
+            </ul>
+            <footer id="correct-wrong" class="correct-wrong">
+                <p>Wrong !</p>
+            </footer>
+        </section>
+
+        <!-- Results -->
+        <section id="results-content" class="results-content">
+            <h2>All Done!</h2>
+            <p>Your Score Is: 0</p>
+            <div id="highscore-container" class="highscore-container">
+                <label for="">Enter Initials:</label>
+                <input type="text">
+                <a href="./highscores.html"><button id="sub-btn" class="sub-btn" type="submit">submit</button></a>
+            </div>
+        </section>
+    </main>
+
+
+
+
+
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>

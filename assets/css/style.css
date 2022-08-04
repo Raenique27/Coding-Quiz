@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 /* header styling */
-header {
+.highscore-timer {
     display: flex;
     justify-content: space-between;
     margin: 30px;
@@ -14,51 +14,15 @@ header {
     text-decoration: none;
 }
 
-.timer{
-    display: flex;
-}
-
-.time {
-    position: relative;
-    right: 20px;
-}
-
-.time-sec {
-    position: relative;
-    right: 10px;
-}
-
 /* start page styling */
 .start-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 530px;
-    border-radius: 5px;
+    padding: 10%;
 }
 
-.start-heading {
-    position: absolute;
-    top: 105px;
-    left: 35%;
-    font-size: 30px;
-}
-
-.start-p {
-    position: absolute;
-    top: 198px;
-    left: 32%;
-    font-size: 18px;
-    text-align: center;
-}
-
-.start-btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.start-btn button {
+#start-quiz {
     font-size: 15px;
     background-color: indigo;
     color: white;
@@ -69,13 +33,23 @@ header {
     cursor: pointer;
 }
 
-.start-btn button:hover {
+.start-content button:hover {
     background-color: plum;
 }
 /* Question Styling */
-.option{
+.quiz-content {
     display: flex;
-    width: 19%;
+    flex-direction: column;
+    text-align: center;
+    padding: 50px;
+}
+
+.answer-choices{
+    padding: 50px;
+    list-style: none;
+}
+.answer-choices button{
+    width: 25%;
     font-size: 20px;
     border-radius: 10px;
     border: 5px solid white;
@@ -84,16 +58,14 @@ header {
     
 }
 
-.option:hover {
+.answer-choices button:hover {
     cursor: pointer;
     background-color: plum;
 }
 
-.option-number {
-    padding: 5px;
+.results-content {
+    display: none;
 }
 
-.option-text {
-    padding: 5px;
-}
+
 
