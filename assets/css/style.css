@@ -33,7 +33,7 @@
     cursor: pointer;
 }
 
-.start-content button:hover {
+#start-quiz:hover {
     background-color: plum;
 }
 /* Question Styling */
@@ -77,6 +77,21 @@
 }
 
 .correct-wrong p {
+    border: 3px solid lightgray;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    margin: 20px;
+}
+
+.correct-right {
+    width: 100%;
+    font-size: 30px;
+    color: lightgray;
+    display: none;
+}
+
+.correct-right p {
     border: 3px solid lightgray;
     border-bottom: none;
     border-left: none;

@@ -69,7 +69,33 @@ var nextQuestion = function () {
     activeQuestion = otherQuestions[questions[i]]
     questions.innerHtml = activeQuestion.questions
 
-    
+    answerChoices.forEach(function (options) {
+        var choiceNumber = options.dataset["number"]
+        options.innerHTML = activeQuestion["option" + choiceNumber]
+    })
+
+    activeQuestion.splice(questions[i],1)
+
+    answerSelected = true
+
+    answerChoices.forEach(function (options) {
+        options.addEventListener("click", function(event) {
+            if (!answerSelected) 
+
+            return
+
+            answerSelected = false
+            var choiceSelected = event.target
+            var selectAnswer = choiceSelected.dataset["number"]
+
+            var applyClass = selectAnswer
+            if (selectAnswer == activeQuestion.answer) {
+                
+            }
+        })
+    })
+
+
 }
 
 
