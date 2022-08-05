@@ -47,17 +47,17 @@ var questions = [
 },
 ];
 
-var points = 100
+var points = 10
 var questionAmt = 5
 
-var startQuiz = function () {
+startQuiz = () => {
     questionCount = 0
     score = 0
-    activeQuestion = [questions[i]]
+    activeQuestion = [...questions]
     nextQuestion()
 }
 
-var nextQuestion = function () {
+nextQuestion = () => {
     if (activeQuestion.length === 0 || questionCount > questionAmt) {
         localStorage.setItem("currentScore", score)
 
@@ -66,35 +66,48 @@ var nextQuestion = function () {
 
     questionCount++
 
-    activeQuestion = otherQuestions[questions[i]]
-    questions.innerHtml = activeQuestion.questions
+    var indexQuestions = Math.floor(Math.random() * otherQuestions.length)
+    activeQuestion = otherQuestions[indexQuestions]
+    questions.innerText = activeQuestion.questions
 
-    answerChoices.forEach(function (options) {
+    answerChoices.forEach(options => {
         var choiceNumber = options.dataset["number"]
-        options.innerHTML = activeQuestion["option" + choiceNumber]
+        options.innerText = activeQuestion["option" + choiceNumber]
     })
 
-    activeQuestion.splice(questions[i],1)
+    activeQuestion.splice(indexQuestions,1)
 
     answerSelected = true
 
-    answerChoices.forEach(function (options) {
-        options.addEventListener("click", function(event) {
+    answerChoices.forEach(options => {
+        options.addEventListener("click", e =>{
             if (!answerSelected) 
-
+            
             return
 
             answerSelected = false
-            var choiceSelected = event.target
+            var choiceSelected = e.target
             var selectAnswer = choiceSelected.dataset["number"]
 
-            var applyClass = selectAnswer
-            if (selectAnswer == activeQuestion.answer) {
-                
+            var applyClass = selectAnswer == activeQuestion.answer ? "right" : "wrong"
+
+            if (applyClass === "right") {
+                increment(points)
             }
+
+            choiceSelected.parentElement.classList.add(applyClass)
+            
+            setTimeout(() => {
+                choiceSelected.parentElement.classList.remove(applyClass)
+                otherQuestions()
+
+
+            }, 1000)
+           
         })
     })
 
+    
 
 }
 

@@ -76,7 +76,7 @@
     display: none;
 }
 
-.correct-wrong p {
+.wrong {
     border: 3px solid lightgray;
     border-bottom: none;
     border-left: none;
@@ -84,14 +84,8 @@
     margin: 20px;
 }
 
-.correct-right {
-    width: 100%;
-    font-size: 30px;
-    color: lightgray;
-    display: none;
-}
 
-.correct-right p {
+ .right{
     border: 3px solid lightgray;
     border-bottom: none;
     border-left: none;
