@@ -47,6 +47,38 @@ function startQuiz() {
     NextQuestion();
 };
 
+// Continue to next question
+function NextQuestion() {
+    reset();
+    showQuestion(changeQuestions[currentQuestion]);
+};
+
+// Show Questions
+function showQuestion(question) {
+    quizQuestion.innerText = question.question
+    question.answers.forEach(answer => {
+        var btn = document.createElement('button')
+        btn.innerText = answer.text
+        btn.classList.add('btn')
+        if (answer.correct) {
+            btn.dataset.correct = answer.correct
+        }
+        btn.addEventListener('click', selectAnswer)
+        answerChoices.appendChild(btn)
+    })
+};
+
+
+// Reset function
+function reset() {
+    nextBtn.classList.add('hide')
+    answerCheck.classList.add('hide')
+    while (answerChoices.firstChild) {
+        answerChoices.removeChild
+        (answerChoices.firstChild)
+    }
+};
+
 
 
 
