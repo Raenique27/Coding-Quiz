@@ -162,7 +162,7 @@ var showScore = function () {
 };
 
 // Show highscores
-function showHighScores(initials) {
+function showHighscores(initials) {
     document.querySelector('#highscores').classList.remove('hide')
     document.querySelector('#scores-container').classList.add('hide');
     startPageContainer.classList.add('hide');
@@ -192,7 +192,25 @@ function showHighScores(initials) {
     localStorage.setItem('scores', JSON.stringify(scores));
 };
 
+// highscores link
+highScores.addEventListener('click', showHighscores);
 
+submitBtn.addEventListener('click', function (event) {
+    event.preventDefault()
+    var initials = document.querySelector('#initials-field').value;
+    showHighscores(initials);
+});
+
+// reload page
+restartBtn.addEventListener('click', function() {
+    window.location.reload();
+});
+
+// clear items in localstorage
+clearBtn.addEventListener('click', function () {
+    localStorage.clear();
+    document.querySelector('#highscore').innerHTML = '';
+});
 
 
 
