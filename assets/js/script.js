@@ -34,6 +34,19 @@ function startTimer() {
     }
 }
 
+// Begin quiz
+function startQuiz() {
+    timerId = setInterval(startTimer, 1000);
+    startPageContainer.classList.add('hide');
+    changeQuestions = questions.sort(() => Math.random() - .5)
+    currentQuestion = 0
+    quizQuestion.classList.remove('hide');
+
+    // timer will begin when the start button is clicked
+    startTimer();
+    NextQuestion();
+};
+
 
 
 
