@@ -12,30 +12,64 @@
 <body>
     <!-- Header -->
     <header>
-        <div id="highscore-timer" class="highscore-timer">  
-            <a class="highscores" href="./highscores.html">View high scores</a>
-            <p>Time: 0</p>
+        <div class="highscore-timer">  
+            <a id="highscore-link">View high scores</a>
+        </div>
+        <div id="timer" class="timer">
+            Time: 75
         </div>
     </header>
+
     <!-- Quiz Content -->
-    <section id="start-page" class="start-page">
+    <section id="start-page" class="start-quiz">
         <!-- Start Page -->
-
-        <div id="start-content" class="start-content">
-
-            <h1>Coding Quiz Challenge</h1>
-
-            <p>Try to answer the following code related questions within the time limit. </br>
+        <h1>Coding Quiz Challenge</h1>
+        <p>Try to answer the following code related questions within the time limit. </br>
                 Keep in mind that incorrect answers will penalize you score/time by </br>
                 10 seconds !
-            </p>
-
-            <a href="./quiz.html"><button id="start-quiz" class="start-btn">Start Quiz</button></a>
+        </p>
+        <div class="begin-quiz">
+            <button id="start-btn" class="start-btn">Start Quiz</button>
         </div>
-
     </section>
 
+    <!--Quiz Questions-->
+    <section id="questions-container" class="hide-questions">
+        <h1 id="quiz-question">Question</h1>
+        <div id="answer-choices" class="answer-btn">
+            <button class="btn">Answer 1</button>
+            <button class="btn">Answer 2</button>
+            <button class="btn">Answer 3</button>
+            <button class="btn">Answer 4</button>
+        </div>
+        <h2 id="answer-check" class="correct-wrong"></h2>
+        <div class="next">
+            <button id="next-btn" class="hide next-btn">Next</button>
+        </div>
+    </section>
 
+    <section id="scores-container" class="hide-score">
+        <form id="submit-form">
+            <h3 id="your-score"></h3>
+            <label id="initials">Enter your initials</label>
+            <input type="text" id="initials-field" placeholder="Enter your Initials"/>
+            <button id="submit-btn">Submit</button>
+        </form>
+    </section>
+
+    <section id="highscores" class="hide high-score-container">
+        <div id="high-score">
+            <h1 class="Leaderboard">Leaderboard</h1>
+            <div id="highscore" class="highscore list-highscores"></div>
+            <div class="restart-clear">
+                <button id="restart-btn">Restart</button>
+                <button id="clear-btn">Clear Scores</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/question.js"></script>
 </body>
 
 </html>
