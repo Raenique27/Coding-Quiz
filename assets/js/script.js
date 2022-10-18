@@ -148,18 +148,51 @@ var showScore = function () {
 
     // Convert scores from string format into array
     storedScores = JSON.parse(storedScores);
-    var userInitals = document.querySelector('#initials-field').value;
+    var initials = document.querySelector('#initials-field').value;
     var newScore = {
         score: remainingTime,
-        userInitals: userInitals
+        initials: initials
     }
     storedScores.push(newScore);
     
     storedScores.forEach(score => {
-        initialsField.innerText = score.userInitals
+        initialsField.innerText = score.initials
         playerScore.innerText = score.score
     })
 };
+
+// Show highscores
+function showHighScores(initials) {
+    document.querySelector('#highscores').classList.remove('hide')
+    document.querySelector('#scores-container').classList.add('hide');
+    startPageContainer.classList.add('hide');
+    questionsContainer.classList.add('hide');
+    if (typeof initials == 'string') {
+        var score = {
+            initials, remainingTime
+        }
+        scores.push(score)
+    }
+
+    var highscore  = document.querySelector('#highscore');
+    highscore.innerHTML = '';
+    
+    for (i=0; i<scores.length; i++) {
+        var nameDiv = document.createElement('div');
+        nameDiv.setAttribute('class', 'nameDiv');
+        nameDiv.innerText = scores[i].initials;
+        var scoreDiv = document.createElement('div');
+        scoreDiv.setAttribute('class', 'scoreDiv');
+        scoreDiv.innerText = scores[i].remainingTime;
+
+        highscore.appendChild(nameDiv);
+        highscore.appendChild(scoreDiv);
+    }
+
+    localStorage.setItem('scores', JSON.stringify(scores));
+};
+
+
 
 
 
