@@ -63,7 +63,7 @@ function showQuestion(question) {
         if (answer.correct) {
             btn.dataset.correct = answer.correct
         }
-        btn.addEventListener('click', selectAnswer)
+        btn.addEventListener('click', selectAnAnswer)
         answerChoices.appendChild(btn)
     })
 };
@@ -79,7 +79,53 @@ function reset() {
     }
 };
 
+// Select answer
+function selectAnAnswer(e) {
+    var selectedAnswer = e.target;
+    var correctAnswer = selectedAnswer.dataset.correct;
+    answerCheck.classList.remove('hide')
 
+    // Check if the answer is correct or not
+    if (correctAnswer) {
+        answerCheck.innerHTML = 'Correct!'
+    } else {
+        answerCheck.innerHTML = 'Incorrect!';
+        if(remainingTime <= 10) {
+            remainingTime = 0;
+        } else {
+            // If user selects the wrong answer deduct 10sec from remaining time
+            remainingTime -= 10;
+        }
+    }
+
+    Array.from(answerChoices.children).forEach(btn => {
+        statusClass(btn, btn.dataset.correct)
+    })
+
+    if(changeQuestions.length > currentQuestion + 1) {
+        nextBtn.classList.remove('hide')
+        answerCheck.classList.remove('hide')
+    } else {
+        startBtn.classList.remove('hide')
+        storeScore();
+    }
+};
+
+// Show the correct answer based on button colors
+function statusClass(element, correct) {
+    resetStatusClass(element)
+    if (correct) {
+        element.classList.add('correct');
+    } else {
+        element.classList.add('wrong');
+    }
+};
+
+// Remove the classes
+function resetStatusClass(element) {
+    element.classList.remove('correct');
+    element.classList.remove('wrong');
+};
 
 
 
