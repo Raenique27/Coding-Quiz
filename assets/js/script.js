@@ -16,6 +16,24 @@ var restartBtn = document.querySelector('#restart-btn');
 var playerScore = document.querySelector('#your-score');
 var score = JSON.parse(localStorage.getItem('scores')) || [];
 
+var changeQuestions, currentQuestion;
+
+// Start button will bring up first question and a next button will display
+startBtn.addEventListener('click', startQuiz);
+nextBtn.addEventListener('click', () => {
+    currentQuestion++
+    NextQuestion();
+});
+
+// timer
+function startTimer() {
+    remainingTime--;
+    timer.textContent = 'Time: ' + remainingTime;
+    if (remainingTime <= 0) {
+        collectScore();
+    }
+}
+
 
 
 
