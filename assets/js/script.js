@@ -11,10 +11,10 @@ var answerCheck = document.querySelector('#answer-check');
 var highScores = document.querySelector('#highscore-link');
 var submitBtn = document.querySelector('#submit-btn');
 var clearBtn = document.querySelector('#clear-btn');
-var initialsField = document.querySelector('#initials-field');
+var initialsField = document.querySelector('#user-name');
 var restartBtn = document.querySelector('#restart-btn');
-var playerScore = document.querySelector('#your-score');
-var score = JSON.parse(localStorage.getItem('scores')) || [];
+var playerScore = document.querySelector('#user-score');
+var scores = JSON.parse(localStorage.getItem('scores')) || [];
 
 var changeQuestions, currentQuestion;
 
@@ -121,11 +121,46 @@ function statusClass(element, correct) {
     }
 };
 
-// Remove the classes
+// Remove class
 function resetStatusClass(element) {
     element.classList.remove('correct');
     element.classList.remove('wrong');
 };
+
+
+// Store quiz scores
+function storeScore() {
+    clearInterval(timerId);
+    timer.textContent = 'Time: ' + remainingTime;
+    setTimeout(function () {
+        questionsContainer.classList.add('hide');
+        document.querySelector('#scores-container').classList.remove('hide');
+        document.querySelector('#your-score').textContent = 'Your final score is ' + remainingTime;
+    }, 2000)
+};
+
+var showScore = function () {
+    // Collect score from local storage
+
+    if (!storedScores) {
+        return false;
+    }
+
+    // Convert scores from string format into array
+    storedScores = JSON.parse(storedScores);
+    var userInitals = document.querySelector('#initials-field').value;
+    var newScore = {
+        score: remainingTime,
+        userInitals: userInitals
+    }
+    storedScores.push(newScore);
+    
+    storedScores.forEach(score => {
+        initialsField.innerText = score.userInitals
+        playerScore.innerText = score.score
+    })
+};
+
 
 
 
